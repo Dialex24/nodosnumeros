@@ -14,6 +14,7 @@ import javax.swing.JOptionPane;
 public class Lista {
 Nodo primero;
 Nodo Auxiliar;
+Nodo ultimo;
 String cadena = "";
 
 public void Apilar()
@@ -47,6 +48,22 @@ public String Listar()
  }
  return cadena;
 }
-
+public String Encolar(int Dato){
+        Nodo nuevoNodo = new Nodo(Dato);
+        if(ultimo == null){
+            primero = nuevoNodo;
+        }
+        else{
+            ultimo.siguiente = nuevoNodo;
+        }
+        ultimo = nuevoNodo;
+        
+        cadena = cadena + nuevoNodo.getDato();
+        
+        JOptionPane.showMessageDialog(null, "Nodo Encolado");   
+        return cadena;
+        
+    }
+    
 
 }
